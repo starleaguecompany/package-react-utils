@@ -1,0 +1,131 @@
+{
+  "name": "@starleaguecompany/package-react-utils",
+  "version": "0.0.1",
+  "description": "StarLeagueCompany basic React helpers (hooks, utils, providers , etc)",
+  "keywords": [
+    "utils",
+    "hooks",
+    "react",
+    "typescript"
+  ],
+  "homepage": "https://github.com/starleaguecompany/package-react-utils",
+  "bugs": {
+    "url": "https://github.com/starleaguecompany/package-react-utils/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:starleaguecompany/package-react-utils.git"
+  },
+  "author": "sergey.trushin <sergeytrushin-17@yandex.ru>",
+  "license": "MIT",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "jsnext:main": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "dist/*"
+  ],
+  "scripts": {
+    "prepublishOnly": "yarn build",
+    "test": "yarn jest --passWithNoTests",
+    "lint": "eslint 'src/**/*.{ts,tsx}' --quiet --fix",
+    "dev": "start-storybook -p 6006",
+    "build:storybook": "build-storybook",
+    "prebuild": "rm -rf dist",
+    "build": "rollup -c && tsc",
+    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "prepare": "husky install",
+    "size": "size-limit",
+    "clean": "git clean -Xdf"
+  },
+  "engines": {
+    "node": ">= 12",
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.19.1"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.15.3",
+    "@popperjs/core": "^2.9.3"
+  },
+  "peerDependencies": {
+    "classnames": "^2.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-is": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-private-methods": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/register": "^7.15.3",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@size-limit/preset-big-lib": "^5.0.2",
+    "@starleaguecompany/utils": "^0.0.1",
+    "@starleaguecompany/package-types": "^0.0.1",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/addon-options": "^5.3.21",
+    "@storybook/addons": "^6.3.12",
+    "@storybook/react": "^6.3.12",
+    "@storybook/theming": "^6.3.12",
+    "@testing-library/dom": "^8.3.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.6.1",
+    "@types/react": "^17.0.8",
+    "@types/react-dom": "^17.0.5",
+    "@types/react-is": "^17.0.1",
+    "@types/react-transition-group": "^4.4.2",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^27.0.6",
+    "babel-loader": "^8.2.2",
+    "classnames": "^2.3.1",
+    "css-loader": "^4.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "file-loader": "^6.2.0",
+    "husky": "^7.0.2",
+    "jest": "^27.0.6",
+    "lint-staged": "^11.1.2",
+    "lodash": "^4.17.21",
+    "prettier": "^2.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rollup": "^2.56.3",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
+    "size-limit": "^5.0.3",
+    "typescript": "4.2.2"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead",
+    "not IE 11"
+  ],
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "yarn format --",
+      "yarn lint --"
+    ]
+  }
+}
